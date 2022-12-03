@@ -1,0 +1,9 @@
+FROM ubuntu
+MAINTAINER johnle
+
+RUN apt-get update
+RUN apt-get install cmake
+CMD ["mkdir", "-p", "build"]
+CMD ["cd", "build"]
+CMD ["cmake", ".."]
+CMD ["cmake", "--build", ".", "-j8"]
